@@ -1,13 +1,13 @@
 apiVersion: v1
-kind: pod
+kind: Pod
 metadata:
-  name: GuestBook-webapp-pod
+  name: guestbook-webapp-pod
   labels:
-    name: GuestBook-webapp-pod
-    app: Guest-Book-app
+    name: guestbook-webapp-pod
+    app: guest-book-app
 spec:
   containers:
-    - name: GuestBook-app
+    - name: guestbook-app
       image: gcr.io/google-samples/gb-frontend:v4
       ports:
         - containerPort: 80
