@@ -1,25 +1,25 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name:  redis-deployment
+  name: guestbookapp-deployment
   lebals:
-    name: redis-deployment
+    name: guestbookapp-deployment
     app: guest-book-app
 spec:
   replicas: 2
   selector:
     matchLabels:
-      name: redis-pod
+      name: guestbook-webapp-pod
       app: guest-book-app
-  template:
+  tamplate:
     metadata:
-      name: redis-pod
+      name: guestbook-webapp-pod
       labels:
-        name: redis-pod
+        name: guestbook-webapp-pod
         app: guest-book-app
     spec:
       containers:
-        - name: redis
-          image: redis
+        - name: guestbook-app
+          image: gcr.io/google-samples/gb-frontend:v4
           ports:
-            - containerPort: 6379
+            - containerPort: 80
